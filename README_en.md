@@ -2,25 +2,29 @@
 
 # SmsForwarder
 
+[中文版](README.md)
+
 [![GitHub release](https://img.shields.io/github/release/pppscn/SmsForwarder.svg)](https://github.com/pppscn/SmsForwarder/releases) [![GitHub stars](https://img.shields.io/github/stars/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/stargazers) [![GitHub forks](https://img.shields.io/github/forks/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/network/members) [![GitHub issues](https://img.shields.io/github/issues/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/issues) [![GitHub license](https://img.shields.io/github/license/pppscn/SmsForwarder)](https://github.com/pppscn/SmsForwarder/blob/main/LICENSE)
 
-SmsForwarder - listens to SMS, incoming calls, and App notifications on Android mobile devices, and forward according to user defined rules to another App/device, including DingTalk, WeCom and WeCom Group Bot, Feishi Bot, E-mail, Bark, Webhook, Telegram Bot, ServerChan, PushPlus, SMS, etc.
+--------
 
-### Download
+SmsForwarder - Not only forwarding text messages, but also a must-have for backup devices!
 
-> ⚠ Repo address: https://github.com/pppscn/SmsForwarder/releases
+listens to SMS, incoming calls, and App notifications on Android mobile devices, and forward according to user defined rules to another App/device, including DingTalk, WeCom and WeCom Group Bot, Feishu App and Feishu Group Bot, E-mail, Bark, Webhook, Telegram Bot, ServerChan, PushPlus, SMS, etc.
 
-> ⚠ Repo mirror in China: https://gitee.com/pp/SmsForwarder/releases
+Including active control of the server and client, allowing you to easily and remotely send text messages, check text messages, check calls, check the phone book, check the battery, etc. (New in v3.0+)
 
-> ⚠ Internet storage: https://wws.lanzoui.com/b025yl86h, access password: `pppscn`
+Automated Tasks & Quick Commands, effortlessly automate your life, doubling your efficiency, leaving more time to cherish family bonds! (New in v3.3+)
 
-> ⚠ CoolAPK.com: https://www.coolapk.com/apk/com.idormy.sms.forwarder
+> Notice: Starting from `2022-06-06`, the original `Java edition` code has been archived to the `v2.x` branch and will no longer be updated!
 
-### Manual
+> `v3.x` is compatible with Android 4.4 ~ 13.0.
 
-> ⚠ GitHub: https://github.com/pppscn/SmsForwarder/wiki
+>  `Join the SmsF Preview Program` (online weekly build updates, be the first to experience new versions & bug fixes).
 
-> ⚠ Gitee: https://gitee.com/pp/SmsForwarder/wikis/pages
+**Upgrade Instructions:**
+- After joining the SmsF Preview Experience Program, update online (available from `About Software` page, applicable for `v3.3.0_240305+`).
+- Manual download: [https://github.com/pppscn/SmsForwarder/actions/workflows/Weekly_Build.yml](https://github.com/pppscn/SmsForwarder/actions/workflows/Weekly_Build.yml)
 
 --------
 
@@ -36,74 +40,35 @@ SmsForwarder - listens to SMS, incoming calls, and App notifications on Android 
 
 --------
 
-## Features and standards
+## Workflow:
 
-**Simplicity** - `SmsForwarder` does two things only: Listen to "SMS service/Incoming calls/App notifications", and forward according to rules specified by user.
-
-Benefit by simplicity:
-
-* **E**fficient: (It's inconvenient to read the security codes such as OTP on a mobile phone, when you are using another device; and no solution satisfices our needs)
-
-  > + AirDroid: Too many functionalities, power consuming, requiring to many permissions, data relayed by a 3rd party, paid premium service...
-  > + IFTTT: Too many functionalities, power consuming, requiring to many permissions, data relayed by a 3rd party, paid premium service...
-  > + And other Apps (e.g. Tasker) with similar features.
-
-* **E**nergy friendly: listens to broadcast only when running, and forwards message only when texts are received and logs recent forwarding contents and status.
-* **E**ndurance: "Simplicity is the Ultimate Sophistication." The simpler the code is, the less it errs or crashes; that is what make the app runs longer.
-
-### Workflow:
-
-![工作流程](pic/working_principle.png "工作流程")
-
-### Features:
-
-- [x] Listen to SMS service, and forward according to user-defined rules (SMS contents to destination);
-- [x] Forward to DingTalk Bot (to a group chat and @SOMBODY);
-- [x] Forward to E-mail (SMTP with SSL encryption);
-- [x] Forward to Bark;
-- [x] Forward to webhook (a single web page [sending POST/GET requests to a designated URL](doc/POST_WEB.md));
-- [x] Forward to WeCom Bots;
-- [x] Forward to WeCom enterprise channels;
-- [x] Forward to ServerChan·Turbo;
-- [x] Forward to Telegram Bots (Proxy support ready);
-- [x] Forward to another mobile phone via SMS [Note: Paid service, carriers may charge for SMS forwarding. SMS forwarding should apply with filtered rules when device has no Internet access.]
-- [x] Check for new version and upgrade;
-- [x] Cache purge;
-- [x] Compatible with Android 5.xx, 6.xx, 7.xx, 8.xx, 9.xx, and 10.xx;
-- [x] Support for dual SIM slots smartphones and label different slots/carrier/phone number (if available);
-- [x] Support for multi-level rules;
-- [x] Support for customized labeling of SIM slots and device, and customized forwarding templates;
-- [x] Support for rules with regular expression
-- [x] Support for rules for different SIM slots;
-- [x] Forward missed call information (forwarded by SIM1 slot by default);
-- [x] Retry 5 times after a failed request (customized interval time, stop retrying once successfully request);
-- [x] Forward to FeiShu Bot;
-- [x] Customized scheme (forwarder://main) wake up other Apps;
-- [x] Monitor of battery status changes;
-- [x] I18n support (Chinese and English currently);
-- [x] Support for setting import and export functions (One-key cloning);
-- [x] Listen to notifications of other Apps and forward;
-- [x] Forward to PushPlus;
-- [x] Support for customized template of forwarding rules (default template overrides if left blank);
-- [x] Support for variables in regular expression of forwarding rules;
+![Workflow](pic/working_principle_en.png "Workflow")
 
 --------
 
-### Screenshots :
+## Screenshots :
 
-| Docking in Ntf. screen | Main screen | Fwding rules | Fwding details |
-|  ----  | ----  |  ----  | ----  |
-| ![Docking in Ntf. screen](pic/taskbar.jpg "Docking in Ntf. screen") | ![Main screen](pic/main.png "Main screen") | ![Forwarding rules](pic/rule.jpg "Forwarding rules") | ![Fwding details](pic/maindetail.jpg "Fwding details") |
-| Test of a Fw. rule | Multiple filters | Supported senders | Add/Edit DingTalk sender |
-| ![Test of a Fw. rule](pic/ruleset.png "Test of a Fw. rule") | ![Multiple filters](pic/multimatch.png "Multiple filters") | ![Supported senders](pic/sender.jpg "Supported senders") | ![Add/Edit DingTalk sender](pic/sendersetdingding.jpg "Add/Edit DingTalk sender") |
-| Add/Edit E-mail sender | Add/Edit Bark sender | Add/Edit Webhook | Add/Edit WeCom Group Bot sender |
-| ![Add/Edit E-mail sender](pic/sendersetemail.jpg "Add/Edit E-mail sender") | ![Add/Edit Bark sender](pic/sendersetbark.png "Add/Edit Bark sender") | ![Add/Edit Webhook sender](pic/sendersetwebnotify.jpg "Add/Edit Webhook sender") | ![Add/Edit WeCom group bot](pic/sendersetqywechat.jpg "Add/Edit WeCom group bot") |
-| Add/Edit Telegram Bot sender | Add/Edit ServerChan Turbo sender | Add/Edit WeCom Group sender | Settings |
-| ![Add/Edit Telegram bot](pic/sendertelegram.jpg "Add/Edit Telegram bot") | ![Add/Edit ServerChan Tubo sender](pic/senderserverchan.jpg "Add/Edit ServerChan Tubo sender") | ![Add/Edit WeCom Enterprise channel sender](pic/sendersetqywxapp.jpg "Add/Edit WeCom Enterprise channel sender") | ![Settings](pic/setting.jpg "Settings") |
-| About/Update | RegEx & SIM filters | SMS fwding template w/ SIM label | Add/Edit an SMS fwding rule |
-| ![Online update](pic/update.jpg "Online update") | ![RegEx & SIM filters](pic/regex.jpg "RegEx & SIM filters") | ![SMS fwding template w/ SIM label](pic/siminfo.jpg "SMS fwding template w/ SIM label") | ![Add/Edit SMS fwder.](pic/sendersetsms.jpg "Add/Edit SMS fwder.") |
-| Add/Edit FeiShu Bot sender | Import and export (One-key Cloning) | Listen to ntf. of other Apps and fw. | Get App pkg name(s) |
-| ![Add/Edit FeiShu sender](pic/senderfeishu.png "Add/Edit FeiShu sender") | ![New setting import & export function (One-key Clone)](pic/clone.png "New setting import & export function (One-key Cloning)") | ![Listen to notifications of other Apps and forward](pic/app_notify.png "Listen to notifications of other Apps and forward") | ![Getting list of all Apps (to get App package name)](pic/app_list.png "Getting list of all Apps (to get App package name)") |
+![Screenshots](pic/screenshots.jpg "screenshots.jpg")
+
+See more screenshots：https://github.com/pppscn/SmsForwarder/wiki
+
+--------
+
+## Download
+
+> ⚠ Repo address: https://github.com/pppscn/SmsForwarder/releases
+
+> ⚠ Repo mirror in China: https://gitee.com/pp/SmsForwarder/releases
+
+> ⚠ Internet storage: https://wws.lanzoui.com/b025yl86h, access password: `pppscn`
+
+## Manual
+
+> ⚠ GitHub: https://github.com/pppscn/SmsForwarder/wiki
+
+> ⚠ Gitee: https://gitee.com/pp/SmsForwarder/wikis/pages
+
+![Troubleshooting_Process](pic/Troubleshooting_Process_en.png "Troubleshooting_Process_en.png")
 
 --------
 
@@ -112,27 +77,39 @@ Benefit by simplicity:
 + Submit an issue or Pull Request.
 + Join group chat (only Chinese groups/channels available currently)
 
-| DingTalk | QQ user group #1: 562854376 | QQ user group #2: 31330492 | WeCom |
-|  ----  |  ----  | ----  | ----  |
-| ![钉钉客户群](pic/dingtalk.png "钉钉客户群") | ![QQ交流群：562854376](pic/qqgroup_1.jpg "QQ交流群：562854376") | ![QQ交流群：31330492](pic/qqgroup_2.jpg "QQ交流群：31330492") | ![企业微信群](pic/qywechat.png "企业微信群") |
+|                   Telegram Group                    |
+|:---------------------------------------------------:|
+|   ![Telegram Group](pic/tg.png "Telegram Group")    |
+| [+QBZgnL_fxYM0NjE9](https://t.me/+QBZgnL_fxYM0NjE9) |
 
 ## Acknowledgements
+
+> [Thanks to all the enthusiastic netizens who sponsored this project --> Reward list](https://gitee.com/pp/SmsForwarder/wikis/pages?sort_id=4912193&doc_id=1821427)
 
 > Thanks to the projects below, `SmsForwarder` won't exists without them!
 
 + https://github.com/xiaoyuanhost/TranspondSms (Foundation of `SmsForwarder`)
-+ https://github.com/square/okhttp (http communications)
-+ https://github.com/xuexiangjys/XUpdateAPI (online update)
-+ https://github.com/mailhu/emailkit (email sending)
-+ https://github.com/alibaba/fastjson (json parsing)
++ https://github.com/xuexiangjys/XUI （UI Framework）
++ https://github.com/xuexiangjys/XUpdate (online update)
 + https://github.com/getActivity/XXPermissions (permission requiring)
-+ [![GitHub license](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg?_ga=2.126618957.1361252949.1638261367-1417196221.1635638144&_gl=1*1pfl3dq*_ga*MTQxNzE5NjIyMS4xNjM1NjM4MTQ0*_ga_V0XZL7QHEB*MTYzODMzMjA4OC43LjAuMTYzODMzMjA5Ny4w)](https://jb.gg/OpenSourceSupport)  (License Certificate for JetBrains All Products Pack)
++ https://github.com/mainfunx/frpc_android (reverse proxy)
++ https://github.com/gyf-dev/Cactus (Keep Alive)
++ https://github.com/yanzhenjie/AndServer (HttpServer)
++ https://github.com/jenly1314/Location (Location)
++ https://gitee.com/xuankaicat/kmnkt (socket)
++ [<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg?_ga=2.126618957.1361252949.1638261367-1417196221.1635638144&_gl=1*1pfl3dq*_ga*MTQxNzE5NjIyMS4xNjM1NjM4MTQ0*_ga_V0XZL7QHEB*MTYzODMzMjA4OC43LjAuMTYzODMzMjA5Ny4w" alt="GitHub license" style="width：96px" width="96" />](https://jb.gg/OpenSourceSupport)  (License Certificate for JetBrains All Products Pack)
 
 --------
 
 ## Star this repo if you find this application useful!
 
-[![starcharts stargazers over time](https://starchart.cc/pppscn/SmsForwarder.svg)](https://github.com/pppscn/SmsForwarder)
+<a href="https://star-history.com/#pppscn/SmsForwarder&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date" />
+  </picture>
+</a>
 
 --------
 
